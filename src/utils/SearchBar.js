@@ -2,13 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { styles, Section, SectionButton } from '../utils';
 
-const SearchBar = ({ searchFieldChange, searchFieldSubmit }) => {
+const SearchBar = ({ searchField, searchFieldChange, searchFieldSubmit }) => {
+
+  const searchFieldPlaceholder = searchField === '' ? '...' : searchField;
+
   return (
     <Section>
       <form onSubmit={searchFieldSubmit} >
+        <Label>Enter artist name:</Label>
         <SearchField
           type='search'
-          placeholder='enter an artist'
+          placeholder={searchFieldPlaceholder}
           onChange={searchFieldChange}
         />
         <InputMessage className='input-error-message'>Please enter an artist!</InputMessage>
@@ -19,6 +23,13 @@ const SearchBar = ({ searchFieldChange, searchFieldSubmit }) => {
     </Section>
   );
 }
+
+const Label = styled.label`
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding-bottom: 1rem;
+`;
 
 const SearchField = styled.input`
   display: flex;

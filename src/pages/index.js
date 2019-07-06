@@ -7,13 +7,7 @@ import Artist from '../components/HomePageComponents/Artist';
 import { connect } from "react-redux"
 import { searchField, findArtist, getEvents } from '../state/actions/actions';
 
-
 class IndexPage extends Component {
-
-  componentDidMount = () => {
-    // document.querySelector('.search-again').setAttribute('style', 'display: block');
-    // !(this.props.genres.length > 0) && this.props.onGetMovieGenres();
-  }
 
   onSearchFieldChange = (event) => {
     this.props.onSearchFieldChange(event.target.value);
@@ -32,7 +26,7 @@ class IndexPage extends Component {
   }
 
   render() {
-    const { isPendingArtist, artist, errorArtist, isPendingEvents, events, errorEvents } = this.props;
+    const { isPendingArtist, artist, errorArtist, isPendingEvents, events, errorEvents, searchField } = this.props;
     return (
       // <Layout { ...this.props }>
       <Layout >
@@ -40,7 +34,7 @@ class IndexPage extends Component {
         <HomeHeader img={homeBcg}>
           <Banner title='face reality artists library' subtitle='your ultimate guide to artists and events' />
         </HomeHeader>
-        <SearchBar searchFieldChange={this.onSearchFieldChange} searchFieldSubmit={this.onSearchFieldSubmit}/>
+        <SearchBar searchField={searchField} searchFieldChange={this.onSearchFieldChange} searchFieldSubmit={this.onSearchFieldSubmit}/>
         <Artist
           artistData={artist}
           artistDataError={errorArtist}
@@ -54,24 +48,20 @@ class IndexPage extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    searchField: state.searchField.searchField,
-    isPendingArtist: state.findArtist.isPendingArtist,
-    artist: state.findArtist.artist,
-    errorArtist: state.findArtist.errorArtist,
-    isPendingEvents: state.getEvents.isPendingEvents,
-    events: state.getEvents.events,
-    errorEvents: state.getEvents.errorEvents
-  }
-}
+const mapStateToProps = state => ({
+  searchField: state.searchField.searchField,
+  isPendingArtist: state.findArtist.isPendingArtist,
+  artist: state.findArtist.artist,
+  errorArtist: state.findArtist.errorArtist,
+  isPendingEvents: state.getEvents.isPendingEvents,
+  events: state.getEvents.events,
+  errorEvents: state.getEvents.errorEvents
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onFindArtist: (artist) => dispatch(findArtist(artist)),
-    onGetEvents: (artist) => dispatch(getEvents(artist)),
-    onSearchFieldChange: (text) => dispatch(searchField(text))
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  onFindArtist(artist) { dispatch(findArtist(artist)) },
+  onGetEvents(artist) { dispatch(getEvents(artist)) },
+  onSearchFieldChange(text) { dispatch(searchField(text)) }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);

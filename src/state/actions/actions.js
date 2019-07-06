@@ -1,11 +1,9 @@
 import * as ACTION_TYPES from './actionTypes';
 
-export const searchField = (text) => {
-  return {
-    type: ACTION_TYPES.SEARCHFIELD,
-    payload: text
-  }
-}
+export const searchField = (text) => ({
+  type: ACTION_TYPES.SEARCHFIELD,
+  payload: text
+});
 
 export const findArtist = (artist) => (dispatch) => {
   dispatch({ type: ACTION_TYPES.ARTIST_PENDING });
