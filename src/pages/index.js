@@ -25,7 +25,7 @@ class IndexPage extends Component {
   }
 
   render() {
-    const { isPendingArtist, artist, errorArtist, isPendingEvents, events, errorEvents, searchField } = this.props;
+    const { isPendingArtist, artist, events, searchField } = this.props;
     return (
       <Layout >
         <HomeHeader img={homeBcg}>
@@ -34,11 +34,8 @@ class IndexPage extends Component {
         <SearchBar searchField={searchField} searchFieldChange={this.onSearchFieldChange} searchFieldSubmit={this.onSearchFieldSubmit}/>
         <Artist
           artistData={artist}
-          artistDataError={errorArtist}
           artistDataPending={isPendingArtist}
           eventData={events}
-          eventDataError={errorEvents}
-          eventDataPending={isPendingEvents}
         />
       </Layout>
     )
@@ -49,10 +46,7 @@ const mapStateToProps = state => ({
   searchField: state.searchField.searchField,
   isPendingArtist: state.findArtist.isPendingArtist,
   artist: state.findArtist.artist,
-  errorArtist: state.findArtist.errorArtist,
-  isPendingEvents: state.getEvents.isPendingEvents,
   events: state.getEvents.events,
-  errorEvents: state.getEvents.errorEvents
 });
 
 const mapDispatchToProps = dispatch => ({

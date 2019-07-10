@@ -10,8 +10,8 @@ const ArtistDetails = ({ artist }) => {
       <img src={image_url} alt='artist_image' className='img' />
       <div className='description'>
         <h3 className='name'>{ name }</h3>
-        <h3 data-testid='upcoming_events' className='events'>Upcoming events: { upcoming_event_count }</h3>
         <a href={facebook_page_url} target='_blank' rel='noopener noreferrer'>{facebook_page_url}</a>
+        <h3 data-testid='upcoming_events' className='events'>Upcoming events: { upcoming_event_count }</h3>
       </div>
     </ArtistWrapper>
   );
@@ -22,29 +22,22 @@ const ArtistWrapper = styled.div`
   grid-template-columns: 1fr;
   grid-column-gap: 1rem;
   max-width: 90vw;
+  text-align: center;
   .img {
     border-radius: 0.5rem;
-    max-width: 80%;
-  }
-  .description {
-    max-height: 300px;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
   }
   .name {
     color: ${styles.colors.mainYellow};
     margin-top: 0.5rem;
-    font-size: 1.35rem;
-  }
-  .vote {
-    font-size: 1.1rem;
-  }
-  .overview {
-    max-height: 150px;
-    overflow: hidden;
+    font-size: 2rem;
   }
   @media (min-width:768px) {
     grid-template-columns: auto 1fr;
+    text-align: left;
     .img {
-      width: 500px;
+      width: 700px;
     }
   }
 `;

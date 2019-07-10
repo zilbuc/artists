@@ -19,7 +19,7 @@ const SearchBar = ({ searchField, searchFieldChange, searchFieldSubmit }) => {
           placeholder={searchFieldPlaceholder}
           onChange={searchFieldChange}
         />
-        <InputMessage className='input-error-message'>Please enter an artist!</InputMessage>
+        <InputMessage data-testid='input-error-message' className='input-error-message'>Please enter an artist!</InputMessage>
         <SectionButton type='submit'>
           Find artist
         </SectionButton>

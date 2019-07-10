@@ -10,8 +10,7 @@ const EventDetails = ({ event }) => {
     <EventWrapper>
       <div className='description'>
         <h3 data-testid='event-name' className='name'>{ name }</h3>
-        <h3 className='location'>{ city }, { country }</h3>
-        <p className='date'>{ datetime.slice(0,10) }</p>
+        <h3 className='venue'>{ city }, { country }, { datetime.slice(0,10) }</h3>
       </div>
     </EventWrapper>
   );
@@ -22,30 +21,18 @@ const EventWrapper = styled.div`
   grid-template-columns: 1fr;
   grid-column-gap: 1rem;
   max-width: 90vw;
-  .img {
-    border-radius: 0.5rem;
-    max-width: 300px;
-  }
-  .description {
-    max-height: 300px;
-  }
+  border-bottom: 0.5px dashed grey;
   .name {
-    color: ${styles.colors.mainYellow};
-    margin-top: 0.5rem;
+    color: ${styles.colors.mainBlack};
+    margin-top: 0.25rem;
     font-size: 1.35rem;
   }
-  .vote {
+  .venue {
     font-size: 1.1rem;
-  }
-  .overview {
-    max-height: 150px;
-    overflow: hidden;
+    color: ${styles.colors.mainGrey};
   }
   @media (min-width: 480px) {
     grid-template-columns: auto 1fr;
-    .img {
-      width: 200px;
-    }
   }
 `;
 

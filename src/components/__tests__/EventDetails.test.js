@@ -21,7 +21,7 @@ describe('EventDetails', () => {
     const { getByText } = render(<EventDetails event={event}/>)
 
     expect(getByText('Sziget Festival')).toBeInTheDocument();
-    expect(getByText('Budapest, Hungary')).toBeVisible();
+    expect(getByText('Budapest, Hungary, 2019-08-12')).toBeVisible();
   });
 
   it('rerenders the component with new props', () => {
@@ -41,7 +41,6 @@ describe('EventDetails', () => {
 
     expect(getByTestId('event-name')).not.toHaveTextContent('Sziget');
     expect(getByTestId('event-name')).toHaveTextContent('2020');
-    expect(getByText('New York, USA')).toBeInTheDocument();
-    expect(getByText('2019-12-31')).toBeVisible();
+    expect(getByText('New York, USA, 2019-12-31')).toBeInTheDocument();
   });
 });

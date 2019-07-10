@@ -27,6 +27,18 @@ describe('IndexPage', () => {
     expect(queryByTestId('event-name')).not.toBeInTheDocument();
   });
 
+  it('displays error message on empty search', () => {
+    const { queryByTestId, getByTestId, getByText } = renderWithRedux(<IndexPage />);
+
+    expect(getByTestId('form')).toHaveFormValues({ searchField: ''});
+    expect(queryByTestId('input-error-message')).not.toBeVisible();
+
+    fireEvent.click(getByText('Find artist'));
+
+    expect(getByTestId('input-error-message')).toBeVisible();
+    expect(getByText('Please enter an artist!')).toBeVisible();
+  });
+
   it('allows entering artist name in searchField', () => {
     const { getByTestId, getByLabelText } = renderWithRedux(<IndexPage />);
 
