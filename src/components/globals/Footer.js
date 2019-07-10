@@ -28,7 +28,7 @@ class Footer extends Component {
         <div className='title'>artists library</div>
         <div className='icons'>
           {this.state.icons.map(icon => {
-            return <a key={icon.id} href={icon.path} target='_blank' rel='noopener noreferrer' >{icon.icon}</a>
+            return <a key={icon.id} href={icon.path} aria-label='social-media-links' target='_blank' rel='noopener noreferrer' >{icon.icon}</a>
           })}
         </div>
         <p className='copyright'>copyright &copy; 2019 face reality artists library</p>

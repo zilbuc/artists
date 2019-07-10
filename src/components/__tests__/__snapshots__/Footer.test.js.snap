@@ -14,6 +14,7 @@ exports[`Footer renders correctly 1`] = `
       class="icons"
     >
       <a
+        aria-label="social-media-links"
         href="https://www.facebook.com"
         rel="noopener noreferrer"
         target="_blank"
@@ -34,6 +35,7 @@ exports[`Footer renders correctly 1`] = `
         </svg>
       </a>
       <a
+        aria-label="social-media-links"
         href="https://www.twitter.com"
         rel="noopener noreferrer"
         target="_blank"
@@ -54,6 +56,7 @@ exports[`Footer renders correctly 1`] = `
         </svg>
       </a>
       <a
+        aria-label="social-media-links"
         href="https://www.instagram.com"
         rel="noopener noreferrer"
         target="_blank"
