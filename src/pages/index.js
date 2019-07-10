@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { HomeHeader, Banner, SearchBar } from '../utils';
 import homeBcg from '../images/bcg/homeBcg.jpg';
+import SEO from '../components/seo';
 import Layout from "../components/layout"
 import Artist from '../components/HomePageComponents/Artist';
 import { connect } from "react-redux"
@@ -28,6 +29,7 @@ class IndexPage extends Component {
     const { isPendingArtist, artist, events, searchField } = this.props;
     return (
       <Layout >
+        <SEO title="Home" />
         <HomeHeader img={homeBcg}>
           <Banner title='face reality artists library' subtitle='your ultimate guide to artists and events' />
         </HomeHeader>

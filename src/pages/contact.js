@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import SEO from '../components/seo';
 import { PageHeader, Banner, Section, Title, InfoWrapper } from '../utils';
 import contactBcg from '../images/bcg/contactBcg.jpg';
 import Img from 'gatsby-image';
@@ -19,6 +20,7 @@ const ICON = graphql`
 
 const ContactPage = () => (
   <Layout>
+  <SEO title="Contact" />
   <PageHeader img={contactBcg}>
     <Banner title='contact us' subtitle={`let's get in touch`}></Banner>
   </PageHeader>

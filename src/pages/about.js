@@ -1,10 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
+import SEO from '../components/seo';
 import { PageHeader, Banner, Section, Title, InfoWrapper } from '../utils';
 import aboutBcg from '../images/bcg/aboutBcg.jpg';
 
 const AboutPage = () => (
   <Layout>
+    <SEO title="About" />
     <PageHeader img={aboutBcg}>
       <Banner title='about us' subtitle='time to face reality'></Banner>
     </PageHeader>
