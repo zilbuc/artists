@@ -8,10 +8,14 @@ const SearchBar = ({ searchField, searchFieldChange, searchFieldSubmit }) => {
 
   return (
     <Section>
-      <form onSubmit={searchFieldSubmit} >
-        <Label>Enter artist name:</Label>
+      <form data-testid='form' onSubmit={searchFieldSubmit} >
+        <Label data-testid='label' htmlFor='artist-search'>Enter artist name:</Label>
         <SearchField
+          id='artist-search'
+          data-testid='searchField'
           type='search'
+          name='searchField'
+          value={searchField}
           placeholder={searchFieldPlaceholder}
           onChange={searchFieldChange}
         />

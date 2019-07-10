@@ -7,7 +7,7 @@ export const searchField = (text) => ({
 
 export const findArtist = (artist) => (dispatch) => {
   dispatch({ type: ACTION_TYPES.ARTIST_PENDING });
-  fetch(`https://rest.bandsintown.com/artists/${artist}?app_id=string`)
+  return fetch(`https://rest.bandsintown.com/artists/${artist}?app_id=string`)
     .then(response => response.json())
     .then(data => dispatch({
       type: ACTION_TYPES.ARTIST_SUCCESS,
@@ -21,13 +21,13 @@ export const findArtist = (artist) => (dispatch) => {
 
 export const getEvents = (artist) => (dispatch) => {
   dispatch({ type: ACTION_TYPES.EVENTS_PENDING });
-  fetch(`https://rest.bandsintown.com/artists/${artist}/events?app_id=string`)
+  return fetch(`https://rest.bandsintown.com/artists/${artist}/events?app_id=string`)
     .then(response => response.json())
     .then(data => dispatch({
       type: ACTION_TYPES.EVENTS_SUCCESS,
       payload: data
     }))
-    .catch(err => dispatch({
+    .catch(err =>  dispatch({
       type: ACTION_TYPES.EVENTS_FAILURE,
       payload: err
     }))

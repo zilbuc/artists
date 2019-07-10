@@ -8,7 +8,7 @@ const Artist = ({ artistData, artistDataError, artistDataPending, eventData, eve
 
   return (
     <Section>
-      <EmptySearch className='search-again'>
+      <EmptySearch data-testid='not-found' className='search-again'>
         {
           (artistData.error || (!artistDataPending && artistData.length === 0)) && 'Nothing found, please enter an artist and try again!'
         }

@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
+    "fetch-mock": "^7.3.3",
     "gatsby": "^2.7.1",
     "gatsby-cli": "^2.6.3",
     "gatsby-image": "^2.1.1",
@@ -23,11 +24,19 @@
     "react-icons": "^3.7.0",
     "react-redux": "^7.0.3",
     "redux": "^4.0.1",
+    "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
-    "prettier": "^1.17.1"
+    "@testing-library/react": "^8.0.4",
+    "babel-jest": "^24.8.0",
+    "babel-preset-gatsby": "^0.2.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
+    "jest-dom": "^3.5.0",
+    "prettier": "^1.17.1",
+    "react-test-renderer": "^16.8.6"
   },
   "keywords": [
     "gatsby"
@@ -39,7 +48,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "jest"
   },
   "repository": {
     "type": "git",

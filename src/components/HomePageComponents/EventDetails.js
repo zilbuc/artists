@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { styles } from '../../utils';
-// import { Link } from 'gatsby';
 
 const EventDetails = ({ event }) => {
   const { datetime, venue } = event;
@@ -9,20 +8,10 @@ const EventDetails = ({ event }) => {
 
   return (
     <EventWrapper>
-      {/* <img src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${poster_path}`} alt={title} className='img' /> */}
       <div className='description'>
-        <h3 className='name'>{ name }</h3>
+        <h3 data-testid='event-name' className='name'>{ name }</h3>
         <h3 className='location'>{ city }, { country }</h3>
-        <p className='date'>{ datetime }</p>
-        {/* <Link
-          to='/movie-details/'
-          onClick={() => {
-            onGetMovieDetails(id);
-            onGetMovieCredits(id);
-          }}
-        >
-          <h4>...Read more</h4>
-        </Link> */}
+        <p className='date'>{ datetime.slice(0,10) }</p>
       </div>
     </EventWrapper>
   );

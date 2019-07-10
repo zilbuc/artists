@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { styles } from '../../utils';
-// import { Link } from 'gatsby';
 
 const ArtistDetails = ({ artist }) => {
   const { name, image_url, facebook_page_url, upcoming_event_count } = artist;
@@ -11,8 +10,8 @@ const ArtistDetails = ({ artist }) => {
       <img src={image_url} alt='artist_image' className='img' />
       <div className='description'>
         <h3 className='name'>{ name }</h3>
-        <h3 className='events'>Upcoming events: { upcoming_event_count }</h3>
-        <a href={facebook_page_url}>{facebook_page_url}</a>
+        <h3 data-testid='upcoming_events' className='events'>Upcoming events: { upcoming_event_count }</h3>
+        <a href={facebook_page_url} target='_blank' rel='noopener noreferrer'>{facebook_page_url}</a>
       </div>
     </ArtistWrapper>
   );

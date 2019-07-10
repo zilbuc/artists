@@ -27,11 +27,11 @@ class NavbarLinks extends Component {
 
   render() {
     return (
-      <LinksWrapper open={this.props.navbarOpen}>
+      <LinksWrapper data-testid='links-wrapper' open={this.props.navbarOpen}>
         {
           this.state.links.map(item => {
             return (
-              <li key={item.id}><Link to={item.path} className='nav-link'>{item.name}</Link></li>
+              <li data-testid={`testid-link${item.id}`} key={item.id}><Link to={item.path} className='nav-link'>{item.name}</Link></li>
             )
           })
         }

@@ -10,14 +10,14 @@ export const textSlanted = `font-family:'Caveat', cursive;`
 export const transDefault = 'transition: all 0.5s ease-in-out'
 export const transFunction = (
   property = 'all',
-  time = '0.5s',
+  time = '0.3s',
   type = 'linear'
 ) => {
   return `transition:${property} ${time} ${type}`
 }
 export const transObject = ({
   property = 'all',
-  time = '0.5s',
+  time = '0.3s',
   type = 'ease-in-out',
 }) => {
   return `transition: ${property} ${time} ${type}`
@@ -25,7 +25,7 @@ export const transObject = ({
 
 export const transition = ({
   property = 'all',
-  time = '0.5s',
+  time = '0.3s',
   type = 'ease-in-out',
 }) => {
   return `transition: ${property} ${time} ${type}`

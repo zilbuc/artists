@@ -24,11 +24,11 @@ class NavbarIcons extends Component {
 
   render() {
     return (
-      <IconWrapper>
+      <IconWrapper data-testid='icon-wrapper'>
         {
           this.state.icons.map(icon => {
             return (
-              <a key={icon.id} href={icon.path} target='_blank' rel='noopener noreferrer'>{icon.icon}</a>
+              <a data-testid={`testid-icon${icon.id}`} key={icon.id} href={icon.path} target='_blank' rel='noopener noreferrer'>{icon.icon}</a>
             )
           })
         }
